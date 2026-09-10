@@ -1,0 +1,119 @@
+/* make sizing calculations easier */
+* {
+    box-sizing: border-box;
+}
+
+/* general page styling */
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* the container */
+.container {
+    width: 100%;
+}
+
+/* all sections */
+.section {
+    position: relative;
+    border: 1px solid black;
+    background-color: #d3d3d3;
+    padding: 45px 15px 15px 15px;
+    min-height: 180px;
+}
+
+/* section headings */
+.section h2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    margin: 0;
+    padding: 5px 30px;
+
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+
+    font-size: 18px;
+}
+
+/* individual heading colors */
+.section-one h2 {
+    background-color: #d59898;
+}
+
+.section-two h2 {
+    background-color: #c14543;
+    color: white;
+}
+
+.section-three h2 {
+    background-color: #e5d198;
+}
+
+/* paragraphs */
+.section p {
+    margin: 0;
+    line-height: 1.4;
+}
+
+
+/* 
+   Desktop View
+   992px and above
+*/
+
+@media (min-width: 992px) {
+
+    .section {
+        float: left;
+        width: 31.333%;
+        margin: 0 1%;
+    }
+
+}
+
+
+/*
+   Tablet View
+   768px - 991px
+*/
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    .section-one,
+    .section-two {
+        float: left;
+        width: 48%;
+        margin: 0 1% 20px 1%;
+    }
+
+    .section-three {
+        clear: both;
+        width: 98%;
+        margin: 0 1%;
+    }
+
+}
+
+
+/*
+   Mobile View
+   767px and below
+*/
+
+@media (max-width: 767px) {
+
+    .section {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+}
