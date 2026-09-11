@@ -26,6 +26,22 @@ h1 {
     min-height: 180px;
 }
 
+.section h2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    margin: 0;
+    padding: 5px 30px;
+
+    border-left: 1px solid #382F52;
+    border-bottom: 1px solid #382F52;
+
+    font-size: 18px;
+    text-align: center;
+    min-width: 120px;
+}
+
 .section-one h2 {
     background-color: #F3B6C6;
 }
