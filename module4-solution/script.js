@@ -66,8 +66,8 @@ for (var i = 0; i < names.length; i++) {
 
 // creating the map function
 function createGreeting(name) {
-  var firstLetter = name.charAt(0).toLowercase();
-  if(firstLetter === "j") [
+  var firstLetter = name.charAt(0).toLowerCase();
+  if(firstLetter === "j") {
     return byeSpeaker.speakSimple(name);
   } else {
     return helloSpeaker.speakSimple(name);
