@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="ShoppingListCheckOff">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping List Check-Off</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Shopping List Check-Off</h1>
+
+    <div class="shopping-lists">
+
+      <!-- To Buy List -->
+      <section class="list-section" ng-controller="ToBuyController as toBuy">
+        <h2>To Buy</h2>
+
+        <!-- When all items have been bought -->
+        <div class="empty-message" ng-if="toBuy.items.length === 0">
+          Everything is bought!
+        </div>
+
+        <!-- For items that still need to be bought -->
+        <ul>
+          <li ng-repeat="item in toBuy.items track by $index">
+            <div class="item-info">
+              <span>Buy {{ item.quantity }} {{ item.name }}</span>
+
+              <!-- Editable quantity -->
+              <input
+                type="number"
+                min="1"
+                step="1"
+                ng-model="item.quantity"
+                aria-label="Quantity for {{ item.name }}"
+                class="quantity-input">
+            </div>
+
+            <!-- Move item to 'Already Bought' list -->
+            <button
+              type="button"
+              ng-click="toBuy.buyItem($index)"
+              ng-disabled="!item.quantity || item.quantity < 1 || item.quantity % 1 !== 0">
+              Buy
+            </button>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 'Already Bought' List -->
+      <section class="list-section" ng-controller="AlreadyBoughtController as bought">
+        <h2>Already Bought</h2>
+
+        <!-- For when no items have been bought -->
+        <div class="empty-message" ng-if="bought.items.length === 0">
+          Nothing bought yet
+        </div>
+
+        <!-- Show purchased items -->
+        <ul>
+          <li ng-repeat="item in bought.items track by $index">
+            <span>
+              Bought {{ item.quantity }} {{ item.name }}
+              for total price of
+              {{ item.quantity * item.pricePerItem | angularDollars }}
+            </span>
+          </li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- AngularJS Library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+  <!-- Application JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>

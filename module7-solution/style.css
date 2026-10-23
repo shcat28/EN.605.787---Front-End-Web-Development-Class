@@ -1,0 +1,143 @@
+
+/* General Page Styling */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f6f9;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+/* Main Container */
+.container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #243447;
+  margin-bottom: 35px;
+}
+
+/* Shopping Lists Layout */
+.shopping-lists {
+  display: flex;
+  gap: 25px;
+  align-items: flex-start;
+}
+
+/* Individual List Sections */
+.list-section {
+  flex: 1;
+  min-width: 0;
+  background-color: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.list-section h2 {
+  margin-top: 0;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #e5e9ef;
+  color: #243447;
+}
+
+/* Shopping List */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+/* Item Information */
+.item-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Editable Quantity Input */
+.quantity-input {
+  width: 65px;
+  padding: 7px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.quantity-input:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+/* Bought Button */
+button {
+  background-color: #2e86de;
+  color: white;
+  border: none;
+  padding: 9px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #1b65ad;
+}
+
+button:disabled {
+  background-color: #aab4be;
+  cursor: not-allowed;
+}
+
+/* Empty List Messages */
+.empty-message {
+  text-align: center;
+  padding: 25px 10px;
+  color: #777;
+  font-style: italic;
+  font-size: 16px;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .shopping-lists {
+    flex-direction: column;
+  }
+
+  .list-section {
+    width: 100%;
+  }
+
+  .container {
+    margin: 15px auto;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+}
