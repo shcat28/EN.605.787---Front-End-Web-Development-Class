@@ -1,0 +1,14 @@
+
+<ul>
+  <li ng-repeat="item in items.found track by $index">
+
+    <strong>{{ item.name }}</strong>,
+    {{ item.short_name }},
+    {{ item.description }}
+
+    <button ng-click="items.remove($index)">
+      Don't want this one!
+    </button>
+
+  </li>
+</ul>
