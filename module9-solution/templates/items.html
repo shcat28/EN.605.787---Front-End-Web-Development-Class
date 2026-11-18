@@ -1,0 +1,32 @@
+<div>
+  <h2>Menu Items</h2>
+
+  <ul>
+    <li ng-repeat="item in $ctrl.items">
+      <h3>{{ item.name }}</h3>
+
+      <p>
+        {{ item.description }}
+      </p>
+
+      <p>
+        <strong>Short Name:</strong>
+        {{ item.short_name }}
+      </p>
+
+      <p ng-if="item.price_small">
+        <strong>Small Price:</strong>
+        {{ item.price_small | currency }}
+      </p>
+
+      <p ng-if="item.price_large">
+        <strong>Large Price:</strong>
+        {{ item.price_large | currency }}
+      </p>
+    </li>
+  </ul>
+
+  <a ui-sref="categories">Back to Categories</a>
+  |
+  <a ui-sref="home">Back to Home</a>
+</div>
