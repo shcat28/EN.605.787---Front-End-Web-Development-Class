@@ -1,20 +1,36 @@
 
-<!-- AngularJS -->
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<!DOCTYPE html>
+<html lang="en" ng-app="MenuApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- AngularJS UI-Router -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.30/angular-ui-router.min.js"></script>
+  <title>Restaurant Menu App</title>
 
-<!-- Application Modules -->
-<script src="data.module.js"></script>
-<script src="menuapp.module.js"></script>
+  <!-- AngularJS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 
-<!-- Data Service -->
-<script src="menudata.service.js"></script>
+  <!-- AngularJS UI-Router -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.30/angular-ui-router.min.js"></script>
 
-<!-- Categories -->
-<script src="categories.component.js"></script>
-<script src="categories.controller.js"></script>
+  <!-- Application Modules -->
+  <script src="data.module.js"></script>
+  <script src="menuapp.module.js"></script>
 
-<!-- Routes -->
-<script src="routes.js"></script>
+  <!-- Data Service -->
+  <script src="menudata.service.js"></script>
+
+  <!-- Categories -->
+  <script src="categories.component.js"></script>
+  <script src="categories.controller.js"></script>
+
+  <!-- Routes -->
+  <script src="routes.js"></script>
+</head>
+
+<body>
+  <h1>Restaurant Menu</h1>
+
+  <ui-view></ui-view>
+</body>
+</html>
