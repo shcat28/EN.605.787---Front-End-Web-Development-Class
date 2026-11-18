@@ -1,4 +1,3 @@
-
 (function () {
   'use strict';
 
@@ -33,6 +32,27 @@
                 return response.data;
               });
           }]
+        }
+      })
+
+      .state('items', {
+        url: '/items/:categoryShortName',
+
+        template: '<items items="itemsCtrl.items"></items>',
+
+        controller: 'ItemsController',
+        controllerAs: 'itemsCtrl',
+
+        resolve: {
+          items: ['MenuDataService', '$stateParams',
+            function (MenuDataService, $stateParams) {
+              return MenuDataService.getItemsForCategory(
+                $stateParams.categoryShortName
+              ).then(function (response) {
+                return response.data.menu_items;
+              });
+            }
+          ]
         }
       });
 
